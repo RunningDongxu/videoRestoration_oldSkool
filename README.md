@@ -6,6 +6,12 @@ Simply run the `denoise_test.m` which should add the subfolders to Matlab paths 
 
 [![Output of processing](https://github.com/petteriTeikari/videoRestoration_oldSkool/blob/master/imgs/youtube.png)](https://www.youtube.com/watch?v=4FyJeGdhpZk)
 
+### Tweaks
+
+**BM4D** automatically estimates the noise level, and if you think that it constantly overestimates your noise, you could multiply with some factor less than one inside of `/BM4D/bm4d.m`
+
+**L0 gradient smoothing** uses a "dumb" *lambda* parameter that depends heavily on your input data, so if you would replace the input retinal video with natural image, the same *lambda* would result in oversmoothed image.
+
 ### Video - Frame - Video - conversion
 
 extract frames
