@@ -1,0 +1,14 @@
+e.g.
+
+extract frames:
+https://ubuntuforums.org/showthread.php?t=1141293
+ffmpeg -i retinal_video.avi -y -f image2  filename%03d.png
+
+do something for frames, e.g. crop
+https://linuxacademy.com/blog/linux/cropping-multiple-images-the-same-way-short-tutorial/
+mogrify -crop 114x113-18-17! *.png
+
+and convert back:
+https://askubuntu.com/questions/610903/how-can-i-create-a-video-file-from-a-set-of-jpg-images
+ffmpeg -framerate 15 -i filename%03d.png -c:v libx264 -profile:v high -crf 10 -pix_fmt yuv420p output.mp4
+
