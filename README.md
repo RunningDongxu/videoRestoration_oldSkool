@@ -4,6 +4,8 @@
 
 Simply run the `denoise_test.m` which should add the subfolders to Matlab paths (tested on Ubuntu 16.04, Matlab R2016a), and processes the input test frames from `testData`
 
+[![Output of processing](https://github.com/petteriTeikari/videoRestoration_oldSkool/blob/master/imgs/youtube.png)](https://www.youtube.com/watch?v=4FyJeGdhpZk)
+
 ### Video - Frame - Video - conversion
 
 extract frames
@@ -59,6 +61,9 @@ _{4} Zhang, Jiawei, et al. "Learning Fully Convolutional Networks for Iterative 
 
 _{5} Chen, Xinyuan, Li Song, and Xiaokang Yang. "Deep RNNs for video denoising." SPIE Optical Engineering+ Applications. International Society for Optics and Photonics, 2016. [doi: 10.1117/12.2239260](https://dx.doi.org/10.1117/12.2239260)_
 
+![Denoising](https://github.com/petteriTeikari/videoRestoration_oldSkool/blob/master/imgs/chen2016_videoDenoising.png)
+
+
 ### Edge-Aware Smoothing
 
 Some remaining ripple could be removed with some edge-aware smoothing techniques such as anisotropic diffusion, bi/trilateral filtering, etc. We use now the ["Image Smoothing via L0 Gradient Minimization"](http://www.cse.cuhk.edu.hk/~leojia/projects/L0smoothing/) published by Xu *et al.* (2011) which was later improved slightly by the L1 Fidelity term by [Pang et al. (2015)](https://doi.org/10.1371/journal.pone.0138682)
@@ -66,6 +71,8 @@ Some remaining ripple could be removed with some edge-aware smoothing techniques
 #### Deep Learning
 
 Xu *et al* (2015) published a "copycat network" [Deep Edge-Aware Filters](http://lxu.me/projects/deepeaf/) + [Github](https://github.com/jimmy-ren/vcnn_double-bladed/tree/master/applications/deep_edge_aware_filters) that was able to learn bilateral and L0 gradient minimization edge-aware smoothing from data.
+
+![Smoothing](https://github.com/petteriTeikari/videoRestoration_oldSkool/blob/master/imgs/Xu2015_edgeAware.png)
 
 ### Edge Detection
 
@@ -75,9 +82,16 @@ The effect of denoising and smoothing to edge detection was quantified using the
 
 Of course if you are interested in having a very good edge detection performance, you should try the contemporary deep learning approaches that offer more robust and accurate edge detection for example published by [Xie and Tu (2015): Holistically-Nested Edge Detection](http://www.cv-foundation.org/openaccess/content_iccv_2015/html/Xie_Holistically-Nested_Edge_Detection_ICCV_2015_paper.html) or [Li et al. (2016): Unsupervised Learning of Edges](http://www.cv-foundation.org/openaccess/content_cvpr_2016/html/Li_Unsupervised_Learning_of_CVPR_2016_paper.html)
 
+![Edges](https://github.com/petteriTeikari/videoRestoration_oldSkool/blob/master/imgs/xie2015_hed_performance.png)
+
 ### Contrast Equalization
 
 [Contrast-limited adaptive histogram equalization (CLAHE)](http://www.cs.utah.edu/~sujin/courses/reports/cs6640/project2/clahe.html) is a commonly used technique to enhance the contrast of the image as our test iamge suffered from low contrast.
 
-Alternative for contrast equalization would be to use [detail magnification](http://www.cse.cuhk.edu.hk/~leojia/projects/L0smoothing/ToneMapping.htm) that are based on separating the "base" and "detail" layers like in HDR tone mapping to boost the details without accentuating the noise. The quality of the detail magnification depend on the base-detail decomposition which again can be improved by **deep learning** and better edge-aware smoothing or [intrinsic image decomposition](https://arxiv.org/abs/1612.07899) techniques
+Alternative for contrast equalization would be to use [detail magnification](http://www.cse.cuhk.edu.hk/~leojia/projects/L0smoothing/ToneMapping.htm) that are based on separating the "base" and "detail" layers like in HDR tone mapping to boost the details without accentuating the noise. 
 
+![Detail magnification](https://github.com/petteriTeikari/videoRestoration_oldSkool/blob/master/imgs/xu_detailMagnification.png)
+
+The quality of the detail magnification depend on the base-detail decomposition which again can be improved by **deep learning** and better edge-aware smoothing or [intrinsic image decomposition](https://arxiv.org/abs/1612.07899) techniques
+
+![Image decomposition](https://github.com/petteriTeikari/videoRestoration_oldSkool/blob/master/imgs/lettry2016_decomposition.png)
