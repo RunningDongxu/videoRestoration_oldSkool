@@ -2,7 +2,7 @@
 
 ## How to use
 
-Simply run the `denoise_test.m` which should add the subfolders to Matlab paths (tested on Ubuntu 16.04, Matlab R2016a), and processes the input test frames from `testData`
+Simply run the `denoise_test.m` which should add the subfolders to Matlab paths (tested on Ubuntu 16.04, Matlab R2016a), and process the input test frames from `testData`
 
 [![Output of processing](https://github.com/petteriTeikari/videoRestoration_oldSkool/blob/master/imgs/youtube.png)](https://www.youtube.com/watch?v=4FyJeGdhpZk)
 
