@@ -74,6 +74,18 @@ _{5} Chen, Xinyuan, Li Song, and Xiaokang Yang. "Deep RNNs for video denoising."
 
 Some remaining ripple could be removed with some edge-aware smoothing techniques such as anisotropic diffusion, bi/trilateral filtering, etc. We use now the ["Image Smoothing via L0 Gradient Minimization"](http://www.cse.cuhk.edu.hk/~leojia/projects/L0smoothing/) published by Xu *et al.* (2011) which was later improved slightly by the L1 Fidelity term by [Pang et al. (2015)](https://doi.org/10.1371/journal.pone.0138682)
 
+![L0 Gradient Smoothing](https://github.com/petteriTeikari/videoRestoration_oldSkool/blob/master/imgs/edgeAwareIdea.jpg)
+
+_Idea of edge-aware smoothing as in L0 gradient minimization_
+
+![Bilateral vs. Trilateral](https://github.com/petteriTeikari/videoRestoration_oldSkool/blob/master/imgs/bi-trilateral_filtering.png)
+
+_Conceptual difference between bilateral and trilateral filter [Pal et al. (2015)](https://arxiv.org/abs/1503.07297)_
+
+![Bilateral vs. Trilateral with MRI smoothing](https://github.com/petteriTeikari/videoRestoration_oldSkool/blob/master/imgs/MRI_biAndTrilateral.png)
+
+_Difference between bilateral and trilater filter for smoothing MRI images [Pal et al. (2015)](https://arxiv.org/abs/1503.07297)_
+
 #### Deep Learning
 
 Xu *et al* (2015) published a "copycat network" [Deep Edge-Aware Filters](http://lxu.me/projects/deepeaf/) + [Github](https://github.com/jimmy-ren/vcnn_double-bladed/tree/master/applications/deep_edge_aware_filters) that was able to learn bilateral and L0 gradient minimization edge-aware smoothing from data.
