@@ -53,6 +53,10 @@ ffmpeg -framerate 10 -i denoised_video_frame_%07d.png -c:v libx264 -profile:v hi
 
 We are using the *de facto* denoising standard [BM4D {1}](http://www.cs.tut.fi/~foi/GCF-BM3D/) to denoise the images that is optimized for volumetric images whereas the video-optimized [VBM4D {2}](http://www.cs.tut.fi/~foi/GCF-BM3D/) could have been a better choice but it would have required a Wavelet Toolbox.
 
+![MRI Volumetric Denoising](https://github.com/petteriTeikari/videoRestoration_oldSkool/blob/master/imgs/youssef2015_MRI_denoising.png)
+
+_Volumetric denoising performance comparison by [Youssef et al. (2015)](https://doi.org/10.1109/TMI.2015.2409265)_
+
 _{1} Maggioni, Matteo, et al. "Nonlocal transform-domain filter for volumetric data denoising and reconstruction." IEEE transactions on image processing 22.1 (2013): 119-133. [doi: 10.1109/TIP.2012.2210725](https://doi.org/10.1109/TIP.2012.2210725)_
 
 _{2} Maggioni, Matteo, et al. "Video denoising, deblocking, and enhancement through separable 4-D nonlocal spatiotemporal transforms." IEEE Transactions on image processing 21.9 (2012): 3952-3966. [doi: 10.1109/TIP.2012.2199324](https://doi.org/10.1109/TIP.2012.2199324)_
@@ -67,7 +71,7 @@ _{4} Zhang, Jiawei, et al. "Learning Fully Convolutional Networks for Iterative 
 
 _{5} Chen, Xinyuan, Li Song, and Xiaokang Yang. "Deep RNNs for video denoising." SPIE Optical Engineering+ Applications. International Society for Optics and Photonics, 2016. [doi: 10.1117/12.2239260](https://dx.doi.org/10.1117/12.2239260)_
 
-![Denoising](https://github.com/petteriTeikari/videoRestoration_oldSkool/blob/master/imgs/chen2016_videoDenoising.png)
+![Video Denoising](https://github.com/petteriTeikari/videoRestoration_oldSkool/blob/master/imgs/chen2016_videoDenoising.png)
 
 
 ### Edge-Aware Smoothing
@@ -110,6 +114,12 @@ Alternative for contrast equalization would be to use [detail magnification](htt
 
 ![Detail magnification](https://github.com/petteriTeikari/videoRestoration_oldSkool/blob/master/imgs/xu_detailMagnification.png)
 
-The quality of the detail magnification depend on the base-detail decomposition which again can be improved by **deep learning** and better edge-aware smoothing or [intrinsic image decomposition](https://arxiv.org/abs/1612.07899) techniques
+The quality of the detail magnification depend on the base-detail decomposition which again can be improved by **deep learning** and better edge-aware smoothing 
+
+![Detail comparison](https://github.com/petteriTeikari/videoRestoration_oldSkool/blob/master/imgs/detailEnhancement_comparison.png)
+
+_Work based on guided image filtering optimization by [Li et al. (2014)](https://doi.org/10.1109/TIP.2014.2371234) (originally introduced [He et al. (2012)](https://doi.org/10.1109/TPAMI.2012.213) from Microsoft, as in the same author(s) as for [ResNet](https://scholar.google.co.uk/scholar?q=Deep+residual+learning+for+image+recognition&btnG=&hl=en&as_sdt=0%2C5))_
+
+or by [intrinsic image decomposition](https://arxiv.org/abs/1612.07899) techniques
 
 ![Image decomposition](https://github.com/petteriTeikari/videoRestoration_oldSkool/blob/master/imgs/lettry2016_decomposition.png)
