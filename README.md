@@ -6,6 +6,8 @@ Simply run the `denoise_test.m` which should add the subfolders to Matlab paths 
 
 [![Output of processing](https://github.com/petteriTeikari/videoRestoration_oldSkool/blob/master/imgs/youtube.png)](https://www.youtube.com/watch?v=4FyJeGdhpZk)
 
+_Note! The residuals are scaled to [0,1], thus the residuals especially from L0 smoothing might seem a lot whereas their absolute magnitude is quite small. For a non-Youtube-degraded video, see the one in this [Github repository](https://github.com/petteriTeikari/videoRestoration_oldSkool/blob/master/testData/retina_output.mp4)_
+
 ### Tweaks
 
 **BM4D** automatically estimates the noise level, and if you think that it constantly overestimates your noise, you could multiply with some factor less than one inside of `/BM4D/bm4d.m`
